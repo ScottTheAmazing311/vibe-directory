@@ -65,6 +65,17 @@
       "screenshotUrl": "https://api.screenshotone.com/take?url=https://meetingnotes.ai&access_key=demo&viewport_width=1280&viewport_height=720&format=webp&cache=true",
       "createdAt": "2024-01-20T13:00:00Z",
       "approved": true
+    },
+    {
+      "name": "Test Project",
+      "url": "https://example.com",
+      "creator": "TestUser",
+      "category": "Utility",
+      "description": "A test project to verify the API works",
+      "screenshotUrl": "https://api.screenshotone.com/take?url=https%3A%2F%2Fexample.com&access_key=your_key_here&viewport_width=1280&viewport_height=720&format=webp&cache=true",
+      "id": "b2300395-055b-4cc6-b03c-4983f6a6938e",
+      "createdAt": "2026-02-14T23:24:12.138Z",
+      "approved": true
     }
   ]
 }
