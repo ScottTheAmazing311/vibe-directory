@@ -1,4 +1,4 @@
-export type Category = 'Home' | 'Game' | 'Health' | 'Work' | 'Creative' | 'Utility';
+export type Category = 'Home' | 'Game' | 'Health' | 'Work' | 'Creative' | 'Utility' | 'Entertainment';
 
 export interface Project {
   id: string;

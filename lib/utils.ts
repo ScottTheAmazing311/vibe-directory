@@ -13,8 +13,9 @@ export function getCategoryColor(category: Category): string {
     Work: 'bg-category-work',
     Creative: 'bg-category-creative',
     Utility: 'bg-category-utility',
+    Entertainment: 'bg-category-entertainment',
   };
-  return colors[category] || 'bg-gray-500';
+  return colors[category] || 'bg-retro-gray-300';
 }
 
 export function getCreatorInitial(name: string): string {

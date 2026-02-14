@@ -1,38 +1,79 @@
 @import "tailwindcss";
 
 body {
-  background-color: #0a0a0f;
+  background-color: #FAFAFA;
   background-image:
-    radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(167, 139, 250, 0.03) 0%, transparent 50%);
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.015) 2px, rgba(0,0,0,0.015) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.015) 2px, rgba(0,0,0,0.015) 4px);
   min-height: 100vh;
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
 }
 
-/* Glassmorphism card base */
-.glass-card {
-  background-color: rgb(26 26 36 / 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgb(255 255 255 / 0.1);
-  border-radius: 1rem;
-  transition: all 0.3s ease;
+/* Retro card */
+.retro-card {
+  background-color: #FFFFFF;
+  border: 3px solid #000000;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
-.glass-card:hover {
-  border-color: rgb(0 212 255 / 0.3);
+.retro-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0px 0px #000000;
 }
 
-/* Card hover with glow */
-.card-hover-glow:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+/* Retro button */
+.retro-button {
+  background-color: #FFE600;
+  border: 3px solid #000000;
+  color: #000000;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(to right, #00d4ff, #a78bfa);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.retro-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+.retro-button:active {
+  transform: translate(0px, 0px);
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+
+/* Retro title */
+.retro-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+}
+
+/* Grid pattern background */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Accent stripe */
+.accent-stripe {
+  position: relative;
+}
+
+.accent-stripe::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(90deg, #FFE600 0%, #FF006E 50%, #00F0FF 100%);
 }
 
 /* Loading shimmer animation */

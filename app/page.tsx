@@ -44,7 +44,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-retro-white">
       <Header onSubmitClick={() => setIsModalOpen(true)} />
 
       <CategoryFilter
@@ -52,7 +52,7 @@ export default function Home() {
         onCategoryChange={setActiveCategory}
       />
 
-      <main className="max-w-7xl mx-auto">
+      <main>
         {isLoading ? (
           <LoadingSkeleton />
         ) : filteredProjects.length > 0 ? (
@@ -61,6 +61,28 @@ export default function Home() {
           <EmptyState activeFilter={activeCategory} />
         )}
       </main>
+
+      {/* Footer */}
+      <footer className="border-t-4 border-retro-black bg-retro-black text-retro-white py-12 mt-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-8 h-8 bg-retro-yellow flex items-center justify-center">
+                  <div className="w-4 h-4 bg-retro-black"></div>
+                </div>
+                <span className="font-mono text-sm font-bold tracking-wider">VIBE.DIRECTORY</span>
+              </div>
+              <p className="font-mono text-xs text-retro-gray-300">
+                Showcasing projects built on pure vibes
+              </p>
+            </div>
+            <div className="font-mono text-xs text-retro-gray-300">
+              © 2026 — Built with intention
+            </div>
+          </div>
+        </div>
+      </footer>
 
       <SubmitModal
         isOpen={isModalOpen}

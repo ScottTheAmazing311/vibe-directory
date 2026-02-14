@@ -9,34 +9,42 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        dark: {
-          DEFAULT: '#0a0a0f',
-          lighter: '#121218',
-          card: '#1a1a24',
-        },
-        electric: {
-          blue: '#00d4ff',
-          cyan: '#00ffff',
-        },
-        accent: {
-          purple: '#a78bfa',
-          orange: '#ff8c42',
+        retro: {
+          black: '#000000',
+          white: '#FFFFFF',
+          yellow: '#FFE600',
+          pink: '#FF006E',
+          cyan: '#00F0FF',
+          green: '#00FF41',
+          gray: {
+            100: '#F5F5F5',
+            200: '#E5E5E5',
+            300: '#D4D4D4',
+            800: '#262626',
+            900: '#171717',
+          },
         },
         category: {
-          home: '#4caf50',
-          game: '#9c27b0',
-          health: '#2196f3',
-          work: '#ff9800',
-          creative: '#e91e63',
-          utility: '#607d8b',
+          home: '#00FF41',
+          game: '#FF006E',
+          health: '#00F0FF',
+          work: '#FFE600',
+          creative: '#9D4EDD',
+          utility: '#06FFA5',
+          entertainment: '#FF006E',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Space Grotesk', 'Inter', 'sans-serif'],
+        mono: ['Space Mono', 'monospace'],
       },
       boxShadow: {
-        'glow-blue': '0 0 20px rgba(0, 212, 255, 0.4)',
-        'card': '0 8px 32px rgba(0, 0, 0, 0.3)',
+        'retro': '8px 8px 0px 0px #000000',
+        'retro-sm': '4px 4px 0px 0px #000000',
+        'retro-hover': '12px 12px 0px 0px #000000',
+      },
+      animation: {
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
     },
   },

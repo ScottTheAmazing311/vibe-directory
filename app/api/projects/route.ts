@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate category
-    const validCategories: Category[] = ['Home', 'Game', 'Health', 'Work', 'Creative', 'Utility'];
+    const validCategories: Category[] = ['Home', 'Game', 'Health', 'Work', 'Creative', 'Utility', 'Entertainment'];
     if (!validCategories.includes(category)) {
       return NextResponse.json(
         { error: 'Invalid category' },

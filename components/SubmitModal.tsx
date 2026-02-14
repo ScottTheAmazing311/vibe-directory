@@ -20,7 +20,7 @@ export default function SubmitModal({ isOpen, onClose, onSuccess }: SubmitModalP
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const categories: Category[] = ['Home', 'Game', 'Health', 'Work', 'Creative', 'Utility'];
+  const categories: Category[] = ['Home', 'Game', 'Health', 'Work', 'Creative', 'Utility', 'Entertainment'];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -80,128 +80,144 @@ export default function SubmitModal({ isOpen, onClose, onSuccess }: SubmitModalP
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        className="absolute inset-0 bg-retro-black/80"
         onClick={onClose}
       />
 
       {/* Modal */}
-      <div className="relative glass-card max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8">
-        <h2 className="text-3xl font-bold gradient-text mb-6">
-          Submit Your Project
-        </h2>
+      <div className="relative retro-card max-w-2xl w-full max-h-[90vh] overflow-y-auto bg-retro-white accent-stripe">
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className="absolute top-6 right-6 w-10 h-10 bg-retro-black text-retro-yellow hover:bg-retro-gray-900 transition-colors font-mono font-bold text-xl"
+          disabled={isLoading}
+        >
+          ×
+        </button>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Project Name */}
-          <div>
-            <label htmlFor="name" className="block text-white/80 text-sm font-medium mb-2">
-              Project Name *
-            </label>
-            <input
-              id="name"
-              type="text"
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full px-4 py-3 bg-dark-lighter/50 border border-white/10 rounded-lg text-white placeholder-white/30 focus:border-electric-blue/50 focus:outline-none transition-colors"
-              placeholder="My Awesome Project"
-              disabled={isLoading}
-            />
-          </div>
+        <div className="p-8 md:p-12">
+          <h2 className="retro-title text-4xl md:text-5xl mb-2">
+            SUBMIT
+          </h2>
+          <h2 className="retro-title text-4xl md:text-5xl text-retro-gray-300 mb-8">
+            YOUR PROJECT
+          </h2>
 
-          {/* URL */}
-          <div>
-            <label htmlFor="url" className="block text-white/80 text-sm font-medium mb-2">
-              Project URL *
-            </label>
-            <input
-              id="url"
-              type="url"
-              value={formData.url}
-              onChange={(e) => setFormData({ ...formData, url: e.target.value })}
-              className="w-full px-4 py-3 bg-dark-lighter/50 border border-white/10 rounded-lg text-white placeholder-white/30 focus:border-electric-blue/50 focus:outline-none transition-colors"
-              placeholder="https://myproject.com"
-              disabled={isLoading}
-            />
-          </div>
-
-          {/* Creator */}
-          <div>
-            <label htmlFor="creator" className="block text-white/80 text-sm font-medium mb-2">
-              Your Name *
-            </label>
-            <input
-              id="creator"
-              type="text"
-              value={formData.creator}
-              onChange={(e) => setFormData({ ...formData, creator: e.target.value })}
-              className="w-full px-4 py-3 bg-dark-lighter/50 border border-white/10 rounded-lg text-white placeholder-white/30 focus:border-electric-blue/50 focus:outline-none transition-colors"
-              placeholder="Your name"
-              disabled={isLoading}
-            />
-          </div>
-
-          {/* Category */}
-          <div>
-            <label htmlFor="category" className="block text-white/80 text-sm font-medium mb-2">
-              Category *
-            </label>
-            <select
-              id="category"
-              value={formData.category}
-              onChange={(e) => setFormData({ ...formData, category: e.target.value as Category })}
-              className="w-full px-4 py-3 bg-dark-lighter/50 border border-white/10 rounded-lg text-white focus:border-electric-blue/50 focus:outline-none transition-colors"
-              disabled={isLoading}
-            >
-              <option value="">Select a category</option>
-              {categories.map((cat) => (
-                <option key={cat} value={cat}>
-                  {cat}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {/* Description */}
-          <div>
-            <label htmlFor="description" className="block text-white/80 text-sm font-medium mb-2">
-              Description *
-            </label>
-            <textarea
-              id="description"
-              value={formData.description}
-              onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-              className="w-full px-4 py-3 bg-dark-lighter/50 border border-white/10 rounded-lg text-white placeholder-white/30 focus:border-electric-blue/50 focus:outline-none transition-colors resize-none"
-              placeholder="Brief description of your project..."
-              rows={4}
-              disabled={isLoading}
-            />
-          </div>
-
-          {/* Error message */}
-          {error && (
-            <div className="p-4 bg-red-500/10 border border-red-500/50 rounded-lg text-red-400 text-sm">
-              {error}
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Project Name */}
+            <div>
+              <label htmlFor="name" className="block font-mono text-xs uppercase tracking-wider font-bold mb-2">
+                Project Name *
+              </label>
+              <input
+                id="name"
+                type="text"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                className="w-full px-4 py-3 bg-retro-white border-3 border-retro-black font-mono focus:outline-none focus:shadow-retro-sm transition-shadow disabled:opacity-50"
+                placeholder="My Awesome Project"
+                disabled={isLoading}
+              />
             </div>
-          )}
 
-          {/* Buttons */}
-          <div className="flex gap-4">
-            <button
-              type="button"
-              onClick={onClose}
-              disabled={isLoading}
-              className="flex-1 px-6 py-3 bg-dark-lighter/50 border border-white/10 rounded-lg text-white/80 hover:border-white/30 transition-all duration-300 disabled:opacity-50"
-            >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="flex-1 px-6 py-3 bg-electric-blue/20 border border-electric-blue/50 rounded-lg text-electric-blue font-semibold hover:bg-electric-blue/30 hover:shadow-glow-blue transition-all duration-300 disabled:opacity-50"
-            >
-              {isLoading ? 'Submitting...' : 'Submit Project'}
-            </button>
-          </div>
-        </form>
+            {/* URL */}
+            <div>
+              <label htmlFor="url" className="block font-mono text-xs uppercase tracking-wider font-bold mb-2">
+                Project URL *
+              </label>
+              <input
+                id="url"
+                type="url"
+                value={formData.url}
+                onChange={(e) => setFormData({ ...formData, url: e.target.value })}
+                className="w-full px-4 py-3 bg-retro-white border-3 border-retro-black font-mono focus:outline-none focus:shadow-retro-sm transition-shadow disabled:opacity-50"
+                placeholder="https://myproject.com"
+                disabled={isLoading}
+              />
+            </div>
+
+            {/* Creator */}
+            <div>
+              <label htmlFor="creator" className="block font-mono text-xs uppercase tracking-wider font-bold mb-2">
+                Your Name *
+              </label>
+              <input
+                id="creator"
+                type="text"
+                value={formData.creator}
+                onChange={(e) => setFormData({ ...formData, creator: e.target.value })}
+                className="w-full px-4 py-3 bg-retro-white border-3 border-retro-black font-mono focus:outline-none focus:shadow-retro-sm transition-shadow disabled:opacity-50"
+                placeholder="Your name"
+                disabled={isLoading}
+              />
+            </div>
+
+            {/* Category */}
+            <div>
+              <label htmlFor="category" className="block font-mono text-xs uppercase tracking-wider font-bold mb-2">
+                Category *
+              </label>
+              <select
+                id="category"
+                value={formData.category}
+                onChange={(e) => setFormData({ ...formData, category: e.target.value as Category })}
+                className="w-full px-4 py-3 bg-retro-white border-3 border-retro-black font-mono focus:outline-none focus:shadow-retro-sm transition-shadow disabled:opacity-50"
+                disabled={isLoading}
+              >
+                <option value="">Select a category</option>
+                {categories.map((cat) => (
+                  <option key={cat} value={cat}>
+                    {cat}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Description */}
+            <div>
+              <label htmlFor="description" className="block font-mono text-xs uppercase tracking-wider font-bold mb-2">
+                Description *
+              </label>
+              <textarea
+                id="description"
+                value={formData.description}
+                onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                className="w-full px-4 py-3 bg-retro-white border-3 border-retro-black font-mono focus:outline-none focus:shadow-retro-sm transition-shadow resize-none disabled:opacity-50"
+                placeholder="Brief description of your project..."
+                rows={4}
+                disabled={isLoading}
+              />
+            </div>
+
+            {/* Error message */}
+            {error && (
+              <div className="p-4 bg-retro-pink border-3 border-retro-black">
+                <p className="font-mono text-sm font-bold text-retro-black">
+                  ERROR: {error}
+                </p>
+              </div>
+            )}
+
+            {/* Buttons */}
+            <div className="flex gap-4 pt-4">
+              <button
+                type="button"
+                onClick={onClose}
+                disabled={isLoading}
+                className="flex-1 px-6 py-4 bg-retro-white border-3 border-retro-black font-mono font-bold uppercase hover:bg-retro-gray-100 transition-colors disabled:opacity-50"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="flex-1 retro-button px-6 py-4 disabled:opacity-50"
+              >
+                {isLoading ? 'Submitting...' : 'Submit'}
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
