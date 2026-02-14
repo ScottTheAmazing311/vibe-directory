@@ -1,0 +1,70 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "name": "Divvy Days",
+      "url": "https://divvydays.com",
+      "creator": "Alex",
+      "category": "Game",
+      "description": "An interactive visual novel about office life and making choices that matter.",
+      "screenshotUrl": "https://api.screenshotone.com/take?url=https://divvydays.com&access_key=demo&viewport_width=1280&viewport_height=720&format=webp&cache=true",
+      "createdAt": "2024-01-15T10:00:00Z",
+      "approved": true
+    },
+    {
+      "id": "2",
+      "name": "Friend Ranker",
+      "url": "https://friendranker.app",
+      "creator": "Jordan",
+      "category": "Utility",
+      "description": "Sort your friends through head-to-head comparisons. Find out who really matters most.",
+      "screenshotUrl": "https://api.screenshotone.com/take?url=https://friendranker.app&access_key=demo&viewport_width=1280&viewport_height=720&format=webp&cache=true",
+      "createdAt": "2024-01-16T14:30:00Z",
+      "approved": true
+    },
+    {
+      "id": "3",
+      "name": "Utah Garden Planner",
+      "url": "https://utahgardenplanner.com",
+      "creator": "Morgan",
+      "category": "Home",
+      "description": "Plan your perfect Utah garden with zone-specific planting schedules and companion planting tips.",
+      "screenshotUrl": "https://api.screenshotone.com/take?url=https://utahgardenplanner.com&access_key=demo&viewport_width=1280&viewport_height=720&format=webp&cache=true",
+      "createdAt": "2024-01-17T09:15:00Z",
+      "approved": true
+    },
+    {
+      "id": "4",
+      "name": "Habit Streak Tracker",
+      "url": "https://habitstreak.app",
+      "creator": "Casey",
+      "category": "Health",
+      "description": "Build lasting habits with a beautiful streak counter and motivational insights.",
+      "screenshotUrl": "https://api.screenshotone.com/take?url=https://habitstreak.app&access_key=demo&viewport_width=1280&viewport_height=720&format=webp&cache=true",
+      "createdAt": "2024-01-18T11:45:00Z",
+      "approved": true
+    },
+    {
+      "id": "5",
+      "name": "Daily Art Generator",
+      "url": "https://dailyart.xyz",
+      "creator": "Riley",
+      "category": "Creative",
+      "description": "Generate unique art prompts every day to spark your creativity and build your portfolio.",
+      "screenshotUrl": "https://api.screenshotone.com/take?url=https://dailyart.xyz&access_key=demo&viewport_width=1280&viewport_height=720&format=webp&cache=true",
+      "createdAt": "2024-01-19T16:20:00Z",
+      "approved": true
+    },
+    {
+      "id": "6",
+      "name": "Meeting Notes AI",
+      "url": "https://meetingnotes.ai",
+      "creator": "Avery",
+      "category": "Work",
+      "description": "Automatically transcribe and summarize your meetings with AI-powered insights.",
+      "screenshotUrl": "https://api.screenshotone.com/take?url=https://meetingnotes.ai&access_key=demo&viewport_width=1280&viewport_height=720&format=webp&cache=true",
+      "createdAt": "2024-01-20T13:00:00Z",
+      "approved": true
+    }
+  ]
+}
