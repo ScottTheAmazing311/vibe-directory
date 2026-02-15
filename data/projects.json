@@ -65,6 +65,17 @@
       "id": "2e3deaf0-4782-400f-bd13-8af64d62e058",
       "createdAt": "2026-02-14T23:44:54.226Z",
       "approved": true
+    },
+    {
+      "name": "Legal Brand Grader",
+      "url": "https://legalbrandgrader.vercel.app/",
+      "creator": "Scott",
+      "category": "Work",
+      "description": "See how your law firm ranks with a brand audit",
+      "screenshotUrl": "https://api.screenshotone.com/take?url=https%3A%2F%2Flegalbrandgrader.vercel.app%2F&access_key=LSTQ2RQehMULfg&viewport_width=1280&viewport_height=720&format=webp&cache=true",
+      "id": "16455df4-af61-4765-ba1b-cb2cbb2501b2",
+      "createdAt": "2026-02-14T23:50:27.353Z",
+      "approved": true
     }
   ]
 }
