@@ -35,5 +35,15 @@ export async function addProject(project: Omit<Project, 'id' | 'createdAt' | 'ap
 
 export async function saveProjects(projects: Project[]): Promise<void> {
   const data = { projects };
+
+  // Ensure data directory exists
+  const dataDir = path.dirname(DATA_FILE);
+  try {
+    await fs.access(dataDir);
+  } catch {
+    // Directory doesn't exist, create it
+    await fs.mkdir(dataDir, { recursive: true });
+  }
+
   await fs.writeFile(DATA_FILE, JSON.stringify(data, null, 2), 'utf-8');
 }
